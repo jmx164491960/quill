@@ -10,7 +10,7 @@ import type History from '../modules/history.js';
 import type Keyboard from '../modules/keyboard.js';
 import type Uploader from '../modules/uploader.js';
 import Editor from './editor.js';
-import Emitter from './emitter.js';
+import Emitter, { emitterCustom } from './emitter.js';
 import type { EmitterSource } from './emitter.js';
 import instances from './instances.js';
 import logger from './logger.js';
@@ -74,6 +74,7 @@ export interface ExpandedQuillOptions
 }
 
 class Quill {
+  static _emitterCustom = emitterCustom;
   static DEFAULTS = {
     bounds: null,
     modules: {

@@ -1,4 +1,5 @@
 import type Quill from '../core.js';
+import { emitterCustom } from '../core/emitter.js';
 import type { Bounds } from '../core/selection.js';
 
 const isScrollable = (el: Element) => {
@@ -26,6 +27,8 @@ class Tooltip {
   }
 
   hide() {
+    emitterCustom.emit('tooltip-hide');
+    console.log('hide');
     this.root.classList.add('ql-hidden');
   }
 

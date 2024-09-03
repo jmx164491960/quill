@@ -73,3 +73,5 @@ export type EmitterSource =
   (typeof Emitter.sources)[keyof typeof Emitter.sources];
 
 export default Emitter;
+
+export const emitterCustom = new Emitter();

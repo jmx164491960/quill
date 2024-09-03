@@ -1,5 +1,5 @@
 import { merge } from 'lodash-es';
-import Emitter from '../core/emitter.js';
+import Emitter, { emitterCustom } from '../core/emitter.js';
 import BaseTheme, { BaseTooltip } from './base.js';
 import LinkBlot from '../formats/link.js';
 import { Range } from '../core/selection.js';
@@ -45,6 +45,7 @@ class SnowTooltip extends BaseTooltip {
     this.root
       .querySelector('a.ql-remove')
       .addEventListener('click', (event) => {
+        debugger;
         if (this.linkRange != null) {
           const range = this.linkRange;
           this.restoreFocus();
@@ -139,8 +140,10 @@ SnowTheme.DEFAULTS = merge({}, BaseTheme.DEFAULTS, {
             // @ts-expect-error
             const { tooltip } = this.quill.theme;
             tooltip.edit('link', preview);
+            emitterCustom.emit('link-on', preview);
           } else {
             this.quill.format('link', false, Quill.sources.USER);
+            emitterCustom.emit('link-off');
           }
         },
       },

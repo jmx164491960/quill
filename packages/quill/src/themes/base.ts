@@ -1,6 +1,6 @@
 import { merge } from 'lodash-es';
 import type Quill from '../core/quill.js';
-import Emitter from '../core/emitter.js';
+import Emitter, { emitterCustom } from '../core/emitter.js';
 import Theme from '../core/theme.js';
 import type { ThemeOptions } from '../core/theme.js';
 import ColorPicker from '../ui/color-picker.js';
@@ -245,6 +245,7 @@ class BaseTooltip extends Tooltip {
   }
 
   cancel() {
+    debugger;
     this.hide();
     this.restoreFocus();
   }
@@ -291,6 +292,7 @@ class BaseTooltip extends Tooltip {
           delete this.linkRange;
         } else {
           this.restoreFocus();
+          emitterCustom.emit('link:restoreFocus');
           this.quill.format('link', value, Emitter.sources.USER);
         }
         this.quill.root.scrollTop = scrollTop;
