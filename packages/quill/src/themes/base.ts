@@ -245,7 +245,6 @@ class BaseTooltip extends Tooltip {
   }
 
   cancel() {
-    debugger;
     this.hide();
     this.restoreFocus();
   }

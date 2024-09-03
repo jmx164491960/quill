@@ -6,6 +6,9 @@
   "homepage": "https://quilljs.com",
   "keywords": [],
   "license": "BSD-3-Clause",
+  "maintainers": [
+    "jiangminxi"
+  ],
   "scripts": {
     "dev": "PORT=$npm_package_config_ports_website next dev",
     "start": "npm run dev",

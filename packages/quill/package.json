@@ -1,9 +1,12 @@
 {
-  "name": "quill",
+  "name": "@yy/quill",
   "version": "2.0.2",
   "description": "Your powerful, rich text editor",
-  "author": "Jason Chen <jhchen7@gmail.com>",
+  "author": "jiangminxi",
   "homepage": "https://quilljs.com",
+  "maintainers": [
+    "jiangminxi"
+  ],
   "main": "quill.js",
   "type": "module",
   "dependencies": {

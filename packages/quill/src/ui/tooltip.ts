@@ -28,7 +28,6 @@ class Tooltip {
 
   hide() {
     emitterCustom.emit('tooltip-hide');
-    console.log('hide');
     this.root.classList.add('ql-hidden');
   }
 

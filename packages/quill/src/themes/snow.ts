@@ -45,7 +45,6 @@ class SnowTooltip extends BaseTooltip {
     this.root
       .querySelector('a.ql-remove')
       .addEventListener('click', (event) => {
-        debugger;
         if (this.linkRange != null) {
           const range = this.linkRange;
           this.restoreFocus();
